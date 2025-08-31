@@ -1,190 +1,252 @@
 
 
-# [Built Portfolio With GitHub ](https://github.com/said7388/github-portfolio)
+# Charan Pendem - Portfolio Website
 
 ---
 
-# Developer Portfolio
+A modern, responsive portfolio website built with Next.js, showcasing my projects, skills, and experience as a Full Stack Developer.
 
-#### Are you struggling to create a professional portfolio website? Look no further! You can use the Developer Portfolio template and create your very own personalized portfolio today! My website is designed to be user-friendly and easily customizable, making it perfect for both developers and freelancers.
-
----
-
-
-## View live preview [here](https://abusaid.netlify.app/).
+## 🚀 Features
 
 ---
 
-## Table of Contents :scroll:
 
-- [Sections](#sections-bookmark)
-- [Demo](#demo-movie_camera)
-- [Installation](#installation-arrow_down)
-- [Getting Started](#getting-started-dart)
-- [Usage](#usage-joystick)
-- [Deployment](#deployment-rocket)
-- [Tutorials](#tutorials-wrench)
-  - [Gmail App Password Setup](#gmail-app-password-setup)
-  - [Create a Telegram Bot](#create-a-telegram-bot)
-  - [Fetching Blog from dev.to](#fetching-blog-from-devto)
-- [Packages Used](#packages-used-package)
+- **Responsive Design**: Optimized for all devices and screen sizes
+- **Modern UI/UX**: Clean, professional design with smooth animations
+- **Contact Form**: Functional contact form with email integration
+- **Project Showcase**: Interactive project cards with live demos and code links
+- **Skills Section**: Animated skills display with technology icons
+- **Education Timeline**: Educational background with interactive cards
+- **SEO Optimized**: Meta tags and structured data for better search visibility
 
 ---
 
-# Sections :bookmark:
+## 🛠️ Tech Stack
+
+- **Frontend**: Next.js 15, React 19, TailwindCSS
+- **Animations**: Lottie React, Framer Motion
+- **Icons**: React Icons
+- **Email**: Nodemailer
+- **Deployment**: Vercel
+
+---
+
+## 📋 Sections
 
 - HERO SECTION
 - ABOUT ME
-- EXPERIENCE
 - SKILLS
 - PROJECTS
 - EDUCATION
-- BLOG
-- CONTACTS
+- CONTACT
 
 ---
 
-# Installation :arrow_down:
+## 🚀 Quick Start
 
-### You will need to download Git and Node to run this project
+### Prerequisites
+
+Make sure you have the following installed:
 
 - [Git](https://git-scm.com/downloads)
-- [Node](https://nodejs.org/en/download/)
+- [Node.js](https://nodejs.org/en/download/) (version 18 or higher)
 
-#### Make sure you have the latest version of both Git and Node on your computer.
+### Installation
 
-```bash
-node --version
-git --version
-```
+1. **Clone the repository**:
+   ```bash
+   git clone https://github.com/charan-pendem/portfolio.git
+   cd portfolio
+   ```
 
-## <br />
+2. **Install dependencies**:
+   ```bash
+   npm install
+   ```
 
-# Getting Started :dart:
+3. **Set up environment variables**:
+   ```bash
+   cp .env.example .env.local
+   ```
+   
+   Fill in your environment variables in `.env.local`:
+   ```env
+   NEXT_PUBLIC_APP_URL=http://localhost:3000
+   EMAIL_ADDRESS=your-email@gmail.com
+   GMAIL_PASSKEY=your-app-password
+   ```
 
-### Fork and Clone the repo
+4. **Run the development server**:
+   ```bash
+   npm run dev
+   ```
 
-To Fork the repo click on the fork button at the top right of the page. Once the repo is forked open your terminal and perform the following commands
+5. **Open your browser** and visit [http://localhost:3000](http://localhost:3000)
 
-```bash
-git clone https://github.com/<YOUR GITHUB USERNAME>/developer-portfolio.git
+## 🔧 Configuration
 
-cd developer-portfolio
-```
+### Personal Data
 
-### Install packages from the root directory
-
-```bash
-npm install
-# or
-yarn install
-```
-
-Then, run the development server:
-
-```bash
-npm run dev
-# or
-yarn dev
-```
-
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
-
----
-
-### Running with Docker Compose
-
-1. **Build Docker Image and Run Container**:
-    ```bash
-    docker-compose up --build
-    ```
-
-2. **Access the Application**:
-    Visit [http://localhost:3000](http://localhost:3000) in your web browser to view the running application.
-
----
-
-### Building the Docker Image
-
-1. **Build the Docker Image using Dockerfile.dev**:
-
-    ```bash
-    docker build -t nextjs-app -f Dockerfile.dev .
-    ```
-
-2. **Running the Docker Container**:
-
-    ```bash
-    docker run -p 3000:3000 nextjs-app
-    ```
-
-3. **Access the Application**:
-    Visit [http://localhost:3000](http://localhost:3000) in your web browser to view the running application.
-
----
-
-# Usage :joystick:
-
-Please create a new `.env` file from `.env.example` file.
-
-Eg:
-
-```env
-NEXT_PUBLIC_GTM =
-NEXT_PUBLIC_APP_URL =
-TELEGRAM_BOT_TOKEN =
-TELEGRAM_CHAT_ID =
-GMAIL_PASSKEY =
-EMAIL_ADDRESS =
-```
-
-### Then, Customize data in the `utils/data` [folder](https://github.com/said7388/developer-portfolio/tree/main/utils/data).
-
-Eg:
+Update your personal information in `utils/data/personal-data.js`:
 
 ```javascript
 export const personalData = {
-  name: "ABU SAID",
-  profile: "/profile.png",
-  designation: "Full-Stack Software Developer",
-  description: "My name is ABU SAID....",
-  email: "abusaid7388@gmail.com",
-  phone: "+8801608797655",
-  address: "Dhaka, Bangladesh",
-  github: "https://github.com/said7388",
-  facebook: "https://www.facebook.com/abusaid.riyaz/",
-  linkedIn: "https://www.linkedin.com/in/abu-said-bd/",
-  twitter: "https://twitter.com/said7388",
-  stackOverflow: "https://stackoverflow.com/users/16840768/abu-said",
-  leetcode: "https://leetcode.com/said3812/",
-  devUsername: "said7388",
-  resume: "...",
+  name: "Your Name",
+  profile: '/profile.png',
+  designation: "Your Title",
+  description: "Your bio...",
+  email: 'your-email@example.com',
+  // ... other fields
 };
 ```
 
-`devUsername` is used for fetching blog posts from `dev.to`.
+### Projects
+
+Add your projects in `utils/data/projects-data.js`:
+
+```javascript
+export const projectsData = [
+  {
+    id: 1,
+    name: 'Project Name',
+    description: 'Project description...',
+    tools: ['React', 'Node.js', 'MongoDB'],
+    role: 'Full Stack Developer',
+    code: 'https://github.com/username/repo',
+    demo: 'https://your-demo-url.com',
+  },
+  // ... more projects
+];
+```
+
+### Skills
+
+Update your skills in `utils/data/skills.js`:
+
+```javascript
+export const skillsData = [
+  'HTML',
+  'CSS',
+  'JavaScript',
+  'React',
+  // ... your skills
+];
+```
 
 ---
 
-# Deployment :rocket:
+### Education
 
-Deploying the app to platforms like Vercel or Netlify is quick and easy.
+Update your education in `utils/data/educations.js`:
 
-## Deploying to Vercel:
+```javascript
+export const educations = [
+  {
+    id: 1,
+    title: "Your Degree",
+    duration: "Year - Year",
+    institution: "Your Institution",
+  },
+  // ... more education entries
+];
+```
 
-1. **Sign up or log in** to [Vercel](https://vercel.com/).
-2. Once logged in, click on **"New Project"**.
-3. Select your **GitHub repo** (the one that contains your forked project) and click **Import**.
-4. Configure your environment variables in the Vercel dashboard by adding each key from your `.env` file.
-   - E.g., `NEXT_PUBLIC_GTM`, `NEXT_PUBLIC_APP_URL`, `TELEGRAM_BOT_TOKEN`, etc.
-5. Click on **Deploy**. Vercel will automatically detect your Next.js app and build it.
-6. Once the deployment is complete, you can visit your live website!
+## 📧 Contact Form Setup
 
-### Updating After Deployment
+---
 
-Whenever you push changes to your GitHub repo, Vercel will automatically redeploy the app, keeping your portfolio up-to-date.
+To enable the contact form functionality:
 
-## Deploying to Netlify:
+1. **Enable 2-Factor Authentication** on your Gmail account
+2. **Generate an App Password**:
+   - Go to [Google Account Settings](https://myaccount.google.com/)
+   - Navigate to Security → 2-Step Verification → App Passwords
+   - Generate a new app password for "Mail"
+3. **Add credentials to your environment variables**:
+   ```env
+   EMAIL_ADDRESS=your-email@gmail.com
+   GMAIL_PASSKEY=your-16-character-app-password
+   ```
+
+## 🚀 Deployment
+
+### Deploy to Vercel
+
+1. **Push your code to GitHub**
+2. **Connect to Vercel**:
+   - Visit [Vercel](https://vercel.com)
+   - Import your GitHub repository
+3. **Configure Environment Variables**:
+   - Add all variables from your `.env.local` file
+   - Update `NEXT_PUBLIC_APP_URL` to your production domain
+4. **Deploy**: Vercel will automatically build and deploy your site
+
+### Environment Variables for Production
+
+---
+
+```env
+NEXT_PUBLIC_APP_URL=https://your-domain.vercel.app
+EMAIL_ADDRESS=your-email@gmail.com
+GMAIL_PASSKEY=your-app-password
+NEXT_PUBLIC_GTM=your-gtm-id (optional)
+```
+
+## 📁 Project Structure
+
+```
+├── app/
+│   ├── api/                 # API routes
+│   ├── components/          # React components
+│   │   ├── homepage/        # Homepage sections
+│   │   └── helper/          # Utility components
+│   ├── css/                 # Global styles
+│   └── assets/              # Static assets
+├── utils/
+│   ├── data/                # Configuration data
+│   └── skill-image.js       # Skill icons mapping
+├── public/                  # Public assets
+└── ...config files
+```
+
+## 🎨 Customization
+
+### Colors
+The portfolio uses a dark theme with accent colors:
+- Primary: `#16f2b3` (green)
+- Secondary: `#1a1443` (dark blue)
+- Accent: Pink to violet gradients
+
+### Fonts
+The project uses Inter font family for clean, modern typography.
+
+### Adding New Sections
+Create new components in `app/components/homepage/` and import them in `app/page.js`.
+
+## 🤝 Contributing
+
+---
+
+1. Fork the repository
+2. Create a feature branch: `git checkout -b feature-name`
+3. Commit your changes: `git commit -m 'Add feature'`
+4. Push to the branch: `git push origin feature-name`
+5. Open a pull request
+
+## 📄 License
+
+This project is open source and available under the [MIT License](LICENSE).
+
+## 📞 Contact
+
+- **Email**: pendemcharan111@gmail.com
+- **LinkedIn**: [Charan Pendem](https://www.linkedin.com/in/charan-pendem-21316625b)
+- **GitHub**: [charan-pendem](https://github.com/charan-pendem)
+
+---
+
+⭐ If you found this portfolio helpful, please give it a star on GitHub!
+
 
 1. **Sign up or log in** to [Netlify](https://www.netlify.com/).
 2. In the **Netlify Dashboard**, click **"New site from Git"**.
