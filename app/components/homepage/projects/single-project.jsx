@@ -2,7 +2,7 @@
 
 import React from "react";
 import { useParams } from "next/navigation";
-import { projectsData } from "../../../../utils/data/project-data";
+import { projectsData } from "../../../../utils/data/projects-data";
 import Link from "next/link";
 
 const SingleProject = () => {

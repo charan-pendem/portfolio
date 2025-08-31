@@ -1,0 +1,12 @@
+{
+  "functions": {
+    "app/api/contact/route.js": {
+      "maxDuration": 30
+    }
+  },
+  "env": {
+    "NEXT_PUBLIC_APP_URL": "@next_public_app_url",
+    "EMAIL_ADDRESS": "@email_address",
+    "GMAIL_PASSKEY": "@gmail_passkey"
+  }
+}

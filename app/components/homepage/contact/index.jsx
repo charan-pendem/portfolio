@@ -62,7 +62,7 @@ function ContactSection() {
             </Link>
             <Link 
               target="_blank" 
-              href="https://www.instagram.com/__charan_._/?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw%3D%3D#"
+              href="https://www.instagram.com/__charan_._/"
             >
               <FaInstagram
                 className="bg-[#8b98a5] p-3 rounded-full hover:bg-pink-500 hover:scale-110 transition-all duration-300 text-gray-800 cursor-pointer"

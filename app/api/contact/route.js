@@ -53,8 +53,25 @@ async function sendEmail(payload, message) {
 
 export async function POST(request) {
   try {
+    // Validate environment variables
+    if (!process.env.EMAIL_ADDRESS || !process.env.GMAIL_PASSKEY) {
+      console.error('Missing email configuration');
+      return NextResponse.json({
+        success: false,
+        message: 'Email service not configured.',
+      }, { status: 500 });
+    }
+
     const payload = await request.json();
     const { name, email, message: userMessage } = payload;
+
+    // Validate input
+    if (!name || !email || !userMessage) {
+      return NextResponse.json({
+        success: false,
+        message: 'All fields are required.',
+      }, { status: 400 });
+    }
 
     const message = `New message from ${name}\n\nEmail: ${email}\n\nMessage:\n\n${userMessage}\n\n`;
 
