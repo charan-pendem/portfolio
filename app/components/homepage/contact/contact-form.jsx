@@ -33,12 +33,7 @@ function ContactForm() {
       setError({ ...error, required: false });
     };
 
-    try {
-      setIsLoading(true);
-      const res = await axios.post(
-        `/api/contact`,
-        userInput
-      );
+   
 
       toast.success("Message sent successfully!");
       setUserInput({
